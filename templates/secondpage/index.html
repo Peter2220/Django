@@ -6,11 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    {% extends 'base.html' %}
     <h1>Hello World!</h1>
     <br>
-    <h2>Name: {{name}}, <br>
-        Age: {{Age}}
+    <h2>Name: {{name|length}}<br>
+        Name: {{name|slice:'2:5'}}, <br>
+        Name: {{name|add:' Sergio'}}, <br>
+        Name: {{name|cut:'R'|add:'   Sergio'|cut:'r'}}, <br>
+        <!-- Name: amos Segio, -->
+        Age: {{Age}} <br>
+        Filesize: {{size|filesizeformat}}
+        
     </h2>
 
     

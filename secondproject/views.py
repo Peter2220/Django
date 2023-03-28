@@ -10,5 +10,8 @@ from django.http import HttpResponse
 
 
 def index(request):
-    mycontext={"name": "Ramos", "Age": 25}
+    mycontext={"name": "Ramos", "Age": 25, "size":5232132135746755}
     return render(request, 'secondpage/index.html', mycontext)
+
+def about(request):
+    return render(request, 'secondpage/about.html')
