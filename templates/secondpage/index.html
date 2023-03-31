@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,16 +12,21 @@
     {% extends 'base.html' %}
     <h1>Hello World!</h1>
     <br>
-    <h2>Name: {{name|length}}<br>
+    <h2>
+        {% block content %}
+        <h3>Hello World!!!!</h3>
+
+        Name: {{name|length}}<br>
         Name: {{name|slice:'2:5'}}, <br>
         Name: {{name|add:' Sergio'}}, <br>
-        Name: {{name|cut:'R'|add:'   Sergio'|cut:'r'}}, <br>
+        Name: {{name|cut:'R'|add:' Sergio'|cut:'r'}}, <br>
         <!-- Name: amos Segio, -->
         Age: {{Age}} <br>
         Filesize: {{size|filesizeformat}}
-        
+
+        {% endblock content %}
     </h2>
 
-    
 </body>
+
 </html>

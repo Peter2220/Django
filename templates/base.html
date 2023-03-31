@@ -3,3 +3,37 @@
         background: aqua;
     }
 </style>
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<img src="{% static 'images/1.jpg' %}" alt="Test" width="1280" height="768"> <br><br>
+
+{% include 'parts/navbar.html' %}
+
+{% if name == 'Ramos' %}
+    <p>Hello, <b>{{name}}</b>!</p>
+{%elif name == 'Isco'%}
+    <p>Bienvenidos, <b>{{name}}</b>!</p>
+{% else %}
+    <p>Not found</p>
+{% endif %}
+
+{% for character in name %}
+    <p>{{character}}</p>
+{% endfor %}
+<!-- 
+    R
+
+    a
+
+    m
+
+    o
+
+    s 
+-->
+
+{% block content %}
+{% endblock content %}
+{% include 'parts/footer.html' %}
